@@ -23,7 +23,7 @@ export default function ChatWidget() {
             Bonjour 👋 Comment pouvons-nous vous aider avec votre recherche immobilière en Algérie ?
           </div>
           <a
-            href="https://wa.me/213558207793"
+            href="https://wa.me/213550403834"
             target="_blank"
             rel="noopener noreferrer"
             className="mx-4 mb-4 block rounded-xl bg-[#25D366] py-2.5 text-center text-sm font-bold text-white"
