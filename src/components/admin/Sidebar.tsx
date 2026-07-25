@@ -35,11 +35,7 @@ export default function Sidebar({ role }: { role: UserRole }) {
   return (
     <nav className="flex h-full flex-col gap-1 overflow-y-auto p-4">
       <div className="mb-4 flex items-center gap-2.5 px-2">
-        <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
-          <path d="M8 100V38L38 18V100H8Z" fill="#A33449" />
-          <path d="M62 100V8L92 28V100H62Z" fill="#8A9098" />
-          <path d="M38 100V58L50 48L62 58V100H38Z" fill="#fff" />
-        </svg>
+        <img src="/logo.png" alt="Connect Immobilier" width={32} height={32} className="h-8 w-8 object-contain" />
         <div>
           <b className="block font-heading text-sm font-extrabold text-white">Connect</b>
           <span className="text-[10px] uppercase tracking-wider text-slate-400">Administration</span>
