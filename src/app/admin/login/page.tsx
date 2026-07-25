@@ -34,11 +34,7 @@ function LoginForm() {
     <div className="flex min-h-screen items-center justify-center bg-slate-900 px-5">
       <div className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-2xl">
         <div className="mb-6 flex items-center gap-2.5">
-          <svg width="36" height="36" viewBox="0 0 100 100" fill="none">
-            <path d="M8 100V38L38 18V100H8Z" fill="#7A2331" />
-            <path d="M62 100V8L92 28V100H62Z" fill="#454C56" />
-            <path d="M38 100V58L50 48L62 58V100H38Z" fill="#fff" stroke="#E4E6E9" strokeWidth="2" />
-          </svg>
+          <img src="/logo.png" alt="Connect Immobilier" width={36} height={36} className="h-9 w-9 object-contain" />
           <div>
             <b className="block font-heading text-lg font-extrabold text-slate-900">Connect</b>
             <span className="text-[10px] uppercase tracking-wider text-slate-500">Espace d'administration</span>
