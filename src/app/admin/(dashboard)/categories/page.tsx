@@ -1,23 +1,17 @@
 import { listCategories, listAllTags } from "@/lib/data/categories";
 import { createCategoryAction, deleteCategoryAction } from "./actions";
 import PageHeader from "@/components/admin/PageHeader";
-import DataTable, { Column } from "@/components/admin/DataTable";
 import FormErrorBanner from "@/components/admin/FormErrorBanner";
 import NoDatabaseBanner from "@/components/admin/NoDatabaseBanner";
 import { TextInput } from "@/components/admin/FormFields";
 import { Plus, Tag } from "lucide-react";
+import CategoriesTable from "./CategoriesTable";
 
 type CategoryRow = { id: string; nameFr: string; slug: string; _count: { articles: number } };
 
 export default async function CategoriesAdminPage({ searchParams }: { searchParams: { error?: string } }) {
   const categories = (await listCategories()) as unknown as CategoryRow[];
   const tags = await listAllTags();
-
-  const columns: Column<CategoryRow>[] = [
-    { header: "Nom", render: (c) => <span className="font-semibold text-slate-900">{c.nameFr}</span> },
-    { header: "Slug", render: (c) => <span className="font-mono text-xs">{c.slug}</span> },
-    { header: "Articles", render: (c) => c._count.articles },
-  ];
 
   return (
     <div>
@@ -26,7 +20,7 @@ export default async function CategoriesAdminPage({ searchParams }: { searchPara
       {categories.length === 0 && <NoDatabaseBanner />}
 
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-[1fr_320px]">
-        <DataTable columns={columns} rows={categories} onDelete={deleteCategoryAction} emptyMessage="Aucune catégorie pour le moment." />
+        <CategoriesTable categories={categories} onDelete={deleteCategoryAction} />
 
         <div className="space-y-5">
           <div className="rounded-2xl border border-slate-200 bg-white p-5">
